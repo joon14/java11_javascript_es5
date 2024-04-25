@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력과 디지털 시계</title>
+    <style>
+    * { margin: 0; padding: 0;}
+    .wrap { width : 100%; overflow-x:hidden; font-size: 50px; text-align: center; margin-top:10%; }
+    .body { width: 100%; overflow-x: hidden; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="calendar"></div>
+        <div id="clock"></div>
+    </div>
+</body>
+<script>
+var cal = document.getElementById("calendar");
+var clk = document.getElementById("clock");
+var today;
+
+calendar();
+clock();
+var intv = setInterval(function() {
+    calendar();
+    clock();
+}, 1000);
+
+function calendar() {
+    today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    if(month<10) {
+        month = "0"+month;
+    }
+    var date = today.getDate();
+    w = ["일","월","화","수","목","금","토"];
+    var day = w[today.getDay()];
+
+    cal.innerHTML = year +"-"+month+"-"+date+"("+day+")";
+}
+
+function clock() {
+    today = new Date();
+    var hour = today.getHours();
+    if(hour<10) {
+        hour = "AM 0"+hour;
+    }
+    if(hour>12 && hour!=24) {
+        hour = "PM 0"+(hour-12);
+    }
+    if(hour==24) {
+        hour = "AM 0"+(hour-12);
+    }
+    if(hour==12) {
+        hour = "PM "+hour;
+    }
+    var minute = today.getMinutes();
+    if(minute<10) {
+        minute = "0"+minute;
+    }
+    var second = today.getSeconds();
+    if(second<10) {
+        second = "0"+second;
+    }
+    
+    clk.innerHTML = hour+":"+minute+":"+second;
+}
+</script>
+</html>

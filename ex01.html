@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가 01</title>
+    <style>
+    #box { height: 40px; clear: both; background-color: #fff; overflow-x: visible; }
+    #box .grid_box {  width: 420px; height: 40px; clear: both; }
+    #box .grid { display: block; border:1px solid #333; float: left;
+    box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <h1>UI 구현</h1>
+    <hr>
+    <div id="form1">
+        <tr>
+            <th><label><strong>너비 : </strong></label></th>
+            <td><input type="text" name="width" id="width"> px</td>&nbsp;&nbsp;&nbsp;
+        </tr>
+        <tr>
+            <th><label><strong>높이 : </strong></label></th>
+            <td><input type="text" name="height" id="height"> px</td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <th><label><strong>글자크기 : </strong></label></th>
+            <input type="text" name="fontSize" id="fontSize"> px &nbsp;&nbsp;&nbsp;&nbsp;
+        </tr>
+        <tr>
+            <th><label><strong>굵기 : </strong></label></th>
+            <td>
+                &nbsp;보통<input type="radio" name="fontWeigth" id="regular">
+                굵게 <input type="radio" name="fontWeigth" id="bold">
+            </td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <th><label><strong>글자색 : </strong></label></th>
+            <td>
+                <input type="text" name="fontColor" id="fontColor">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <th><label><strong>배경색 : </strong></label></th>
+            <td>
+                <input type="text" name="backColor" id="backColor">
+            </td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <th><label><strong>가로정렬 : </strong></label></th>
+            <td>
+                &nbsp;왼쪽 <input type="radio" name="x-sort" id="left">
+                가운데 <input type="radio" name="x-sort" id="x-center">
+                오른쪽 <input type="radio" name="x-sort" id="right">
+            </td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <th><label><strong>세로정렬 : </strong></label></th>
+            <td>
+                &nbsp;위 <input type="radio" name="y-sort" id="top">
+                가운데 <input type="radio" name="y-sort" id="y-center">
+                아래 <input type="radio" name="y-sort" id="bottom">
+            </td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <th><label><strong>출력 문자열 : </strong></label></th>
+            <td>
+                <input type="text" name="print" id="print"><br><br>
+            </td>
+        </tr>
+        <input type="button" id="btn1" value="적용하기">
+    </div>
+    <br>
+    <div class="wrap">
+        <span id="width"></span>
+        <span id="height"></span>
+        <span id="fontSize"></span>
+        <span id="fontWeight"></span>
+        <span id="fontColor"></span>
+        <span id="backColor"></span>
+        <span id="x-sort"></span>
+        <span id="y-sort"></span>
+        <span id="print"></span>
+
+        <div id="box">
+            <div class="grid_box">
+                <span class="grid" id="grid"></span>
+            </div>
+        </div> 
+    </div>
+    <script>
+    var width = document.getElementById("width").innerHTML+"px";
+    var height = document.getElementById("height").innerHTML+"px";
+    document.getElementById("btn1").addEventListener("click", function() {
+        document.getElementById("grid").style.width=width;
+        document.getElementById("grid").style.height=height;
+    });
+    </script>
+</body>
+</html>
