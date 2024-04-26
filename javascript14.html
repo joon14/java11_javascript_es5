@@ -30,7 +30,7 @@
 var s = document.getElementById("second");
 var m = document.getElementById("minute");
 var h = document.getElementById("hour");
-var clk = document.getElementById("clock");
+var clk = document.getElementById("clock_weight");
 var x;
 
 clock();
@@ -43,21 +43,21 @@ function clock() {
     var hour = today.getHours();
     var minute = today.getMinutes();
     var second = today.getSeconds();
-   
+    /*
     if(hour>12) {
         hour = hour-12;
-    }
+    }*/
     s.style.transform = "rotate("+second*6+"deg)";
     m.style.transform = "rotate("+minute*6+"deg)";
     h.style.transform = "rotate("+hour*30+"deg)";
 
     if(second %2 ==0) {
-        x=60;
+        x=50;
     }
     else {
-        x=-60;
+        x=-50;
     }
-    document.getElementById("clock_weight").style.transform = "rotate("+x+"deg)";
+    clk.style.transform = "rotate("+x+"deg)";
 }
 </script>
 </html>

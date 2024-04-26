@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family:"digital1";
+    src:local("※"),
+    url("./font/digital-7.woff") format('woff'),
+}
+
+@font-face {
+    font-family:"digital2";
+    src:local("※"),
+    url("./font/digital-7-_italic_.woff") format('woff'),
+}
+
+@font-face {
+    font-family:"digital3";
+    src:local("※"),
+    url("./font/digital-7-_mono_.woff") format('woff'),
+}
+
+@font-face {
+    font-family:"digital4";
+    src:local("※"),
+    url("./font/digital-7-_mono-italic_.woff") format('woff'),
+}
